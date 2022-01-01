@@ -1,38 +1,73 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
 .App {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.countdown-container h2{
+  font-size: 50px;
+  margin: 25px 0;
+  font-family: 'Lobster', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.box-timer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.App-link {
-  color: #61dafb;
+.box-timer h2, p {
+  font-family: 'orbitron', sans-serif;
 }
 
-@keyframes App-logo-spin {
+.days, .hours, .minutes, .seconds {
+  font-size: 25px;
+  margin: 0 10px;
+  padding: 20px;
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 
+  0 0 150px #0072ff, 0 0 200px #0072ff;
+}
+
+.hours {
+  animation-delay: 0.3s;
+}
+
+.minutes {
+  animation-delay: 0.7s;
+}
+
+.seconds {
+  animation-delay: 0.1s;
+}
+
+@keyframes animate {
   from {
-    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
   }
 }
+
+
